@@ -11,6 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'language'=>'zh-CN',
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -35,6 +36,24 @@ return [
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
+        ],
+        'i18n' => [
+            'translations' => [
+                'common' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    //'basePath' => '/messages',
+                    'fileMap' => [
+                        'common' => 'common.php',
+                    ],
+                ],
+                'power' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    //'basePath' => '/messages',
+                    'fileMap' => [
+                        'power' => 'power.php',
+                    ],
+                ],
+            ],
         ],
         /*
         'urlManager' => [
